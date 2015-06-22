@@ -17,5 +17,10 @@ download.file(url=remote.copy, destfile="local.cache")
 
 ### Earthquakes of 2014
 
-This is the one I am working on at the moment
+Geonet data for 2014 plotted using maps and points.
 
+![Map of Earthquakes 2014](earthquakes2014/earthquakes2014.png)
+
+### Age distributions of Cities
+
+In Progress (David Hood)s
