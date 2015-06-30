@@ -1,0 +1,2514 @@
+dim(sim2)
+simcalc <- function(pair){#
+simmat <- merge(leftcont[[pair[1]]], leftcont[[pair[2]]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+sim2$rating <- apply(sim2, 1, simcalc)
+simcalc(pair)
+simcalc <- function(pair){#
+simmat <- merge(leftcont[[pair[1]]], leftcont[[pair[2]]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+rating <- apply(sim2[1:1000,], 1, simcalc)
+simcalc <- function(pair,lookup){#
+simmat <- merge(lookup[[pair[1]]], lookup[[pair[2]]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+sim2$rating <- apply(sim2, 1, function(x){simcalc(x,leftcont)})
+head(sim2)
+simcalc <- function(pair,lookup){#
+p1 <- pair[1]#
+p2 <- pair[2]#
+print(p1)#
+print(p2)#
+simmat <- merge(lookup[[p1]], lookup[[p2]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+sim2$rating <- apply(sim2, 1, function(x){simcalc(x,leftcont)})
+leftcont["first"]
+aliceInWonderland <- "CHAPTER I. Down the Rabbit-Hole Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, 'and what is the use of a book,' thought Alice 'without pictures or conversations?' So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her. There was nothing so VERY remarkable in that; nor did Alice think it so VERY much out of the way to hear the Rabbit say to itself, 'Oh dear! Oh dear! I shall be late!' (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually TOOK A WATCH OUT OF ITS WAISTCOAT-
+POCKET, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge. In another moment down went Alice after it, never once considering how in the world she was to get out again. The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well. Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next. First, she tried to look down and make out what she was coming to, but it was too dark to see anything; then she looked at the sides of the well, and noticed that they we
+re filled with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs. She took down a jar from one of the shelves as she passed; it was labelled 'ORANGE MARMALADE', but to her great disappointment it was empty: she did not like to drop the jar for fear of killing somebody, so managed to put it into one of the cupboards as she fell past it. 'Well!' thought Alice to herself, 'after such a fall as this, I shall think nothing of tumbling down stairs! How brave they'll all think me at home! Why, I wouldn't say anything about it, even if I fell off the top of the house!' (Which was very likely true.) Down, down, down. Would the fall NEVER come to an end! 'I wonder how many miles I've fallen by this time?' she said aloud. 'I must be getting somewhere near the centre of the earth. Let me see: that would be four thousand miles down, I think--' (for, you see, Alice had learnt several things of this sort in her lessons in the schoolroom, and though this was not a VERY good opportunity for
+ showing off her knowledge, as there was no one to listen to her, still it was good practice to say it over) '--yes, that's about the right distance--but then I wonder what Latitude or Longitude I've got to?' (Alice had no idea what Latitude was, or Longitude either, but thought they were nice grand words to say.) Presently she began again. 'I wonder if I shall fall right THROUGH the earth! How funny it'll seem to come out among the people that walk with their heads downward! The Antipathies, I think--' (she was rather glad there WAS no one listening, this time, as it didn't sound at all the right word) '--but I shall have to ask them what the name of the country is, you know. Please, Ma'am, is this New Zealand or Australia?' (and she tried to curtsey as she spoke--fancy CURTSEYING as you're falling through the air! Do you think you could manage it?) 'And what an ignorant little girl she'll think me for asking! No, it'll never do to ask: perhaps I shall see it written up somewhere.' Down, down, down. There
+was nothing else to do, so Alice soon began talking again. 'Dinah'll miss me very much to-night, I should think!' (Dinah was the cat.) 'I hope they'll remember her saucer of milk at tea-time. Dinah my dear! I wish you were down here with me! There are no mice in the air, I'm afraid, but you might catch a bat, and that's very like a mouse, you know. But do cats eat bats, I wonder?' And here Alice began to get rather sleepy, and went on saying to herself, in a dreamy sort of way, 'Do cats eat bats? Do cats eat bats?' and sometimes, 'Do bats eat cats?' for, you see, as she couldn't answer either question, it didn't much matter which way she put it. She felt that she was dozing off, and had just begun to dream that she was walking hand in hand with Dinah, and saying to her very earnestly, 'Now, Dinah, tell me the truth: did you ever eat a bat?' when suddenly, thump! thump! down she came upon a heap of sticks and dry leaves, and the fall was over. Alice was not a bit hurt, and she jumped up on to her feet in a m
+oment: she looked up, but it was all dark overhead; before her was another long passage, and the White Rabbit was still in sight, hurrying down it. There was not a moment to be lost: away went Alice like the wind, and was just in time to hear it say, as it turned a corner, 'Oh my ears and whiskers, how late it's getting!' She was close behind it when she turned the corner, but the Rabbit was no longer to be seen: she found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof."   #
+#
+sentences <- tolower(unlist(strsplit(aliceInWonderland, "\\.|!|\\?| '|' |\\(|\\)")))#
+ascii <- gsub("[^[:alnum:] ]", " ",sentences)#
+ascii <- gsub(" +", " ",ascii)#
+n1 <- unlist(lapply(ascii, function(x){c(strsplit(x, " "), NA)}))#
+n1[n1==""] <- NA#
+n1[is.null(n1)] <- NA#
+n2 <- c(n1[2:length(n1)], NA)#
+bigrams <- data.frame(n1, n2)#
+completegrams <- bigrams[complete.cases(bigrams),]#
+completegrams$totup <- 1 #not critical but convenient#
+#
+leftcontext <- function(words){#
+freqs <- aggregate(words, by=list(words), FUN=length)#
+names(freqs) <- c("word","count")#
+freqs$count <- freqs$count / sum(freqs$count)#
+return(freqs)#
+}#
+#
+leftcont <- tapply(completegrams$n1, completegrams$n2,leftcontext)#
+#
+#make all permutations#
+w1 <- rep(names(leftcont), times=length(names(leftcont)))#
+w2 <- rep(names(leftcont), each=length(names(leftcont)))#
+sim<-data.frame(w1,w2)#
+sim <- sim[w1 != w2,]#
+#
+simcalc <- function(pair,lookup){#
+p1 <- pair[1]#
+p2 <- pair[2]#
+print(p1)#
+print(p2)#
+simmat <- merge(lookup[[p1]], lookup[[p2]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+sim$rating <- apply(sim, 1, function(x){simcalc(x,leftcont)})
+completegrams[completegrams$n2="first",]
+completegrams[completegrams$n2=="first",]
+completegrams[completegrams$n2=="hjhl",]
+candidates <- unique(completegrams$n2)#
+w1 <- rep(candidates, times=length(candidates))#
+w2 <- rep(candidates, each=length(candidates))#
+sim<-data.frame(w1,w2)#
+sim <- sim[w1 != w2,]#
+#
+simcalc <- function(pair,lookup){#
+p1 <- pair[1]#
+p2 <- pair[2]#
+print(p1)#
+print(p2)#
+simmat <- merge(lookup[[p1]], lookup[[p2]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+sim$rating <- apply(sim, 1, function(x){simcalc(x,leftcont)})
+#
+simcalc <- function(pair,lookup){#
+simmat <- merge(lookup[[pair[1]]], lookup[[pair[2]]], by="word", all=TRUE)#
+simmat$count.x[is.na(simmat$count.x)] <- 0#
+simmat$count.y[is.na(simmat$count.y)] <- 0#
+sim <- simmat$count.x * simmat$count.y#
+return(sum(sim))#
+}#
+#
+sim$rating <- apply(sim, 1, function(x){simcalc(x,leftcont)})
+head(sim)
+res <- sim[order(sim$w1, decreasing=TRUE),]
+head(res)
+tail(res)
+res <- sim[order(sim$rating, decreasing=TRUE),]
+head(res)
+sentences <- tolower(unlist(strsplit(aliceInWonderland, "\\.|!|\\?| '|' |\\(|\\)")))#
+ascii <- gsub("[^[:alnum:] ]", " ",sentences)#
+ascii <- gsub(" +", " ",ascii)#
+n1 <- unlist(lapply(ascii, function(x){c(strsplit(x, " "), NA)}))#
+n1[n1==""] <- NA#
+n2 <- c(n1[2:length(n1)], NA)#
+bigrams <- data.frame(n1, n2)#
+completegrams <- bigrams[complete.cases(bigrams),]#
+completegrams$totup <- 1 #not critical but convenient#
+##bigrams#
+bf  <- aggregate(totup ~ n1 + n2, data=completegrams, FUN=sum)
+crosset <- merge(bf, bf, by="n1")
+str(crosset)
+str(bf)
+crosset <- crosset[crosset$n2.x != crosset$n2.y, ]
+str(crosset)
+crosset$prod <- crosset$totup.x * crosset$totup.y
+str(n2f)
+n1f <- aggregate(totup ~ n1, data=completegrams, FUN=sum)#
+n2f <- aggregate(totup ~ n2, data=completegrams, FUN=sum)#
+names(n1f)[2] <- "n1f"#
+names(n2f)[2] <- "n2f"#
+n1f$n1f <- n1f$n1f / sum(n1f$n1f)#
+n2f$n2f <- n2f$n2f / sum(n2f$n2f)
+str(n2f)
+n2f <- aggregate(totup ~ n2, data=completegrams, FUN=sum)#
+names(n2f)[2] <- "n2f"#
+#bigram frequencies#
+bf  <- aggregate(totup ~ n1 + n2, data=completegrams, FUN=sum)
+bfprop <- merge(bf,n2f, by="n2)
+bfprop <- merge(bf,n2f, by="n2")
+str(bfprop)
+n2f <- aggregate(totup ~ n2, data=completegrams, FUN=sum)#
+names(n2f)[2] <- "n2f"#
+#bigram frequencies#
+bf  <- aggregate(totup ~ n1 + n2, data=completegrams, FUN=sum)#
+#combine n2 totals#
+bfprop <- merge(bf,n2f, by="n2")#
+#express each observation as a proportion of the number of entries of n2 (so the number for that context)#
+bfprop$totup <- bfprop$totup / bfprop$n2f#
+bfprop$n2f <- NULL#
+#they say many to many joins are bad, they say self joins are bad#
+crosset <- merge(bf, bf, by="n1")
+str(crossset)
+str(crosset)
+crosset <- crosset[crosset$n2.x != crosset$n2.y,]#
+crosset$sim <- crosset$totup.x * crosset$totup.y
+str(crosset)
+#gettin the total for each n2#
+n2f <- aggregate(totup ~ n2, data=completegrams, FUN=sum)#
+names(n2f)[2] <- "n2f"#
+#bigram frequencies#
+bf  <- aggregate(totup ~ n1 + n2, data=completegrams, FUN=sum)#
+#combine n2 totals#
+bfprop <- merge(bf,n2f, by="n2")#
+#express each observation as a proportion of the number of entries of n2 (so the number for that context)#
+bfprop$totup <- bfprop$totup / bfprop$n2f#
+bfprop$n2f <- NULL#
+#they say many to many joins are bad, they say self joins are bad#
+crosset <- merge(bf, bf, by="n1")#
+#when you think about it when are only going to sum when both entries have an n1 (otherwise the frequency is 0, so the product is 0) so joining on the n1 actually works#
+#not interested where both n2s are the same#
+crosset <- crosset[crosset$n2.x != crosset$n2.y,]#
+crosset$sim <- crosset$totup.x * crosset$totup.y#
+str(crosset)
+#gettin the total for each n2#
+n2f <- aggregate(totup ~ n2, data=completegrams, FUN=sum)#
+names(n2f)[2] <- "n2f"#
+#bigram frequencies#
+bf  <- aggregate(totup ~ n1 + n2, data=completegrams, FUN=sum)#
+#combine n2 totals#
+bfprop <- merge(bf,n2f, by="n2")
+n2f <- aggregate(totup ~ n2, data=completegrams, FUN=sum)#
+names(n2f)[2] <- "n2f"#
+#bigram frequencies#
+bf  <- aggregate(totup ~ n1 + n2, data=completegrams, FUN=sum)#
+#combine n2 totals#
+bfprop <- merge(bf,n2f, by="n2")#
+#express each observation as a proportion of the number of entries of n2 (so the number for that context)#
+bfprop$totup <- bfprop$totup / bfprop$n2f#
+bfprop$n2f <- NULL#
+#they say many to many joins are bad, they say self joins are bad#
+crosset <- merge(bfprop, bfprop, by="n1")#
+#when you think about it when are only going to sum when both entries have an n1 (otherwise the frequency is 0, so the product is 0) so joining on the n1 actually works#
+#not interested where both n2s are the same#
+crosset <- crosset[crosset$n2.x != crosset$n2.y,]#
+crosset$sim <- crosset$totup.x * crosset$totup.y#
+str(crosset)
+simindex <- aggregate(sim ~ n2.x + n2.y, data=crosset, sum)
+str(simindex)
+simindex <- simindex[order(simindex$sim, decreasing=TRUE),]
+head(simindex,50)
+library(maps)
+library(mapdata)
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+oldpar <- par()
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+par(bg= "#f1e3b6")#
+#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, main="Earthquakes")#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")
+par(bg= "#f0e3b6")#
+#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes")#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")
+?map
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar=c(0.1, 0.1, 0.1, 0.1))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")
+?polygon
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")
+png
+?png
+png(filename = "R.png",width = 480, height = 480, units = "px")#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 400, height = 480, units = "px")#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 380, height = 480, units = "px")#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 360, height = 480, units = "px")#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.2, 179.2), ylim = c(-47.4, -34.4), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.19, 179.21), ylim = c(-47.41, -34.39), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=3, border="black")#
+polygon(x= c(166.2, 166.2, 179.2, 179.2), y= c(-47.4, -34.4, -34.4, -47.4), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.19, 179.21), ylim = c(-47.41, -34.39), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.19, 166.19, 179.21, 179.21), y= c(-47.41, -34.39, -34.39, -47.41), lwd=3, border="black")#
+polygon(x= c(166.19, 166.19, 179.21, 179.21), y= c(-47.41, -34.39, -34.39, -47.41), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.18, 179.22), ylim = c(-47.42, -34.38), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.18, 166.18, 179.22, 179.22), y= c(-47.42, -34.38, -34.38, -47.42), lwd=3, border="black")#
+polygon(x= c(166.18, 166.18, 179.22, 179.22), y= c(-47.42, -34.38, -34.38, -47.42), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), border="#00FF00")#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")
+par(fg= grey(0.9))#
+#
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+par(fg= grey(0.7))#
+#
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+par(fg= "#333333")#
+#
+png(filename = "R.png",width = 366, height = 480, units = "px")#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+?png
+png(filename = "R.png",width = 366, height = 480, units = "px", bg="#f0e3b6", fg="#333333")#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=".", col="#FF000033")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=19, col="#FF000033", cex=0.4)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+?pch
+png(filename = "R.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#CC000066", cex=0.6)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+?map
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35 type="n")#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n")#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+?plot
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n", axes=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m, lwd=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n", axes=FALSE, ann=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m, lwd=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n", axes=FALSE, ann=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m, lwd=0.1)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n", axes=FALSE, ann=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m, lwd=0.2)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+?png
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6", res=300)#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n", axes=FALSE, ann=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.6)#
+polygon(m, lwd=0.2)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+par(bg= "#f0e3b6")#
+par(fg= "#333333")#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6", res=300)#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+m = map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0), lwd=1, plot=FALSE)#
+plot(x= 166.15:179.25, y=-47.45:-34.35, type="n", axes=FALSE, ann=FALSE)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.01)#
+polygon(m, lwd=0.1)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6", res=300)#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0))#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.01)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= FALSE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.01)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.01)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#22000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+dev.off()
+?text
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+text(text(-43, y = 170, labels = "LOCATIONS OF")#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=TRUE, col="#f0e3b6", main="Earthquakes", mar = c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+text(-43, y = 170, labels = "LOCATIONS OF")#
+dev.off()
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+text(x= 170, y = -43, labels = "LOCATIONS OF")
+text(x= 175, y = -43, labels = "LOCATIONS OF")
+text(x= 170, y = -45, labels = "LOCATIONS OF")
+text(x= 170, y = -36, labels = "LOCATIONS OF")
+text(x= 170, y = -36, labels = "LOCATIONS OF")#
+text(x= 170, y = -37, labels = "EARTHQUAKES")
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+text(x= 170, y = -36, labels = "LOCATIONS OF")#
+text(x= 170, y = -36.5, labels = "EARTHQUAKES", cex=1.8)
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+text(x= 170, y = -36, labels = "LOCATIONS OF")#
+text(x= 170, y = -36.5, labels = "EARTHQUAKES", cex=1.8)#
+text(x= 170, y = -37, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -37.5, labels = "in the year 2015")#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")
+library(maps)#
+library(mapdata)#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+#
+dev.off()
+library(maps)#
+library(mapdata)#
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+#
+dev.off()
+oldpar <- par()#
+#
+#
+#
+#
+library(maps)#
+library(mapdata)#
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 175, y = -45.5, labels = "Source: geonet.org.nz")#
+#
+dev.off()
+?text
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 175, y = -46, labels = "Source: geonet.org.nz", pos=4)#
+text(x= 175, y = -46.5, labels = "Author: David Hood")#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46, labels = "Source: geonet.org.nz", pos=4, cex=0.5)#
+text(x= 174, y = -46.5, labels = "Author: David Hood", pos=4, cex=0.5)#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4)#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6")#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6", pointsize = 12, res=300)#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6", pointsize = 12/300, res=300)#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg="#f0e3b6", pointsize = 300*12/72, res=300)#
+par(fg= "#333333")#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", main="Earthquakes", mar = c(0,0,0,0), boundary= TRUE, lwd=0.5)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border="#f0e3b6")#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.15, 179.25), ylim = c(-47.45, -34.35), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166.15, 166.15, 179.25, 179.25), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2015")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.15 & earthq$longitude < 179.25 & earthq$latitude > -47.55 & earthq$longitude < -34.25,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.15 & earthq$longitude < 179.25 & earthq$latitude > -47.55 & earthq$latitude < -34.25,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- earthq[earthq$longitude >166.2 & earthq$longitude < 179.2 & earthq$latitude > -47.6 & earthq$latitude < -34.2,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- earthq[earthq$longitude >166.3 & earthq$longitude < 179.1 & earthq$latitude > -47.7 & earthq$latitude < -34.1,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- earthq[earthq$longitude >166.3 & earthq$longitude < 179.1 & earthq$latitude > -47.8 & earthq$latitude < -34,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- earthq[earthq$longitude >166.3 & earthq$longitude < 179.1 & earthq$latitude > -47.8 & earthq$latitude < -30,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.3 & earthq$longitude < 179.1 & earthq$latitude > -47.8 & earthq$latitude < -34.6,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.3 & earthq$longitude < 179.1 & earthq$latitude > -47.7 & earthq$latitude < -34.5,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.2 & earthq$longitude < 179.2 & earthq$latitude > -47.4 & earthq$latitude < -34.2,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.25 & earthq$longitude < 179.15 & earthq$latitude > -47.45 & earthq$latitude < -34.15,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.25 & earthq$longitude < 179.15 & earthq$latitude > -47.35 & earthq$latitude < -34.45,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166.1, 179.3), ylim = c(-47.5, -34.3), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=3, border="black")#
+polygon(x= c(166.1, 166.1, 179.3, 179.3), y= c(-47.5, -34.3, -34.3, -47.5), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+earthq <- read.csv("quakes.csv")#
+earthq$longitude[earthq$longitude < 0] <- earthq$longitude[earthq$longitude < 0] * -1#
+earthq <- earthq[earthq$longitude >166.15 & earthq$longitude < 179.25 & earthq$latitude > -47.45 & earthq$latitude < -34.35,]#
+themecol <- "#e9eab0"#
+#
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.45, -34.35, -34.35, -47.45), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.45, -34.35, -34.35, -47.45), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#
+dev.off()
+?png
+366/480
+0.7625 * 20
+png(filename = "R2.png",width = 12, height = 16, units = "cm", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 12, height = 16, units = "cm", bg=themecol, res=300)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -38.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -39, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -39.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -40, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -36.5, labels = "LOCATIONS OF")#
+text(x= 170, y = -37, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -37.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -38, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+par(font=2)#
+text(x= 170, y = -37, labels = "LOCATIONS OF")#
+text(x= 170, y = -37.5, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -38, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -38.5, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+?polygon
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+polygon(x= c(169, 169, 171, 171), y= c(-39, -36, -36, -39), lwd=1, fill=themecol)#
+par(font=2)#
+text(x= 170, y = -37, labels = "LOCATIONS OF")#
+text(x= 170, y = -37.5, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -38, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -38.5, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+polygon(x= c(167, 167, 174, 174), y= c(-39, -36.5, -36.5, -39), lwd=1, fill=themecol)#
+par(font=2)#
+text(x= 170, y = -37, labels = "LOCATIONS OF")#
+text(x= 170, y = -37.5, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -38, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -38.5, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+polygon(x= c(166.5, 166.5, 173.5, 173.5), y= c(-39, -36.5, -36.5, -39), lwd=1, col=themecol)#
+par(font=2)#
+text(x= 170, y = -37, labels = "LOCATIONS OF")#
+text(x= 170, y = -37.5, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -38, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -38.5, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+polygon(x= c(166.5, 166.5, 173.5, 173.5), y= c(-39, -36.5, -36.5, -39), border=NA, col=themecol)#
+par(font=2)#
+text(x= 170, y = -37, labels = "LOCATIONS OF")#
+text(x= 170, y = -37.5, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -38, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -38.5, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+png(filename = "R2.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(166, 179.4), ylim = c(-47.6, -34.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+points(earthq$longitude,earthq$latitude, pch=3, col="#55000066", cex=0.5)#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=3, border="black")#
+polygon(x= c(166, 166, 179.4, 179.4), y= c(-47.6, -34.2, -34.2, -47.6), lwd=1, border=themecol)#
+polygon(x= c(166.5, 166.5, 173.5, 173.5), y= c(-40, -36.5, -36.5, -40), border=NA, col=themecol)#
+par(font=2)#
+text(x= 170, y = -37, labels = "LOCATIONS OF")#
+text(x= 170, y = -37.5, labels = "NEW ZEALAND")#
+text(x= 170, y = -38, labels = "EARTHQUAKES", cex=1.8)#
+par(font=1)#
+text(x= 170, y = -38.5, labels = "Magnitude 3 and Greater")#
+text(x= 170, y = -39, labels = "in the year 2014")#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: geonet.org.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+dev.off()
+read.table("/Volumes/TRANS/unig.txt", header=FALSE, stringsAsFactors=FALSE)
+t <- read.table("/Volumes/TRANS/unig.txt", header=FALSE, stringsAsFactors=FALSE)
+h <- readLines("/Volumes/TRANS/Assignment/datasets/hygiene/hygiene.dat.labels")
+shutDown <- which(as.numeric(h)==1)
+stillOpen <- which(as.numeric(h)==0)
+h <- readLines("/Volumes/TRANS/Assignment/datasets/hygiene/hygiene.dat.labels")#
+h <- as.numeric(h)#
+h[is.na(h)] <- -1#
+shutDown <- which(as.numeric(h)==1)#
+stillOpen <- which(as.numeric(h)==0)#
+#
+dist1 <- rowSums(t[,shutDown])#
+dist0 <- rowSums(t[,stillOpen])
+?dbinom
+deviation <- dbinom(dist1, (dist1 + dist0), 0.5)
+table(h)
+dist1 <- rowSums(t[,(shutDown+1)])#
+dist0 <- rowSums(t[,(stillOpen+1)])#
+deviation <- dbinom(dist1, (dist1 + dist0), 0.5)
+deviation <- dbinom(dist1, (dist1 + dist0), 0.5)
+hist(deviation)
+dbinom(10,30,0.5)
+dbinom(20,30,0.5)
+unknown <- which(h == -1) + 1
+?apply
+t2 <- t[deviation <- 0.05]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)}
+)
+t2 <- t[deviation <- 0.05,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)}
+)
+str(outcome)
+outcome
+t2$votes
+dist1 <- rowSums(t[,(shutDown)])#
+dist0 <- rowSums(t[,(stillOpen)])#
+t$votes <- as.numeric(dist1 > dist0)#
+t$votes[votes == 0] <- -1#
+deviation <- dbinom(dist1, (dist1 + dist0), 0.5)#
+#
+t2 <- t[deviation <- 0.05,]
+shutDown <- which(h == 1) + 1#
+stillOpen <- which(h == 0) + 1#
+unknown <- which(h == -1) + 1#
+dist1 <- rowSums(t[,(shutDown)])#
+dist0 <- rowSums(t[,(stillOpen)])#
+t$votes <- as.numeric(dist1 > dist0)#
+t$votes[votes == 0] <- -1#
+deviation <- dbinom(dist1, (dist1 + dist0), 0.5)#
+#
+t2 <- t[deviation <- 0.05,]
+t$votes[t$votes == 0] <- -1#
+deviation <- dbinom(dist1, (dist1 + dist0), 0.5)#
+#
+t2 <- t[deviation <- 0.05,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)}
+)
+outcome
+t2$votes
+str(deviation)
+twodist <- data.frame(dist1, dist0)#
+deviation <- apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)#
+#
+t2 <- t[deviation <- 0.05,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)}
+)
+twodist <- data.frame(dist1, dist0)#
+deviation <- apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)})#
+#
+t2 <- t[deviation <- 0.05,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})
+outcome
+deviation
+str(twodist)
+apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)})
+deviation <- apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)})
+t2 <- t[deviation <- 0.05,]
+str(t2)
+outcome <-  apply(t2[,unknown],1, function(x){ sum(x * t2$votes)})
+outcome
+apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})
+t2$V548 * t2$votes
+str(t2$votes)
+table(t$votes)
+table(t2$votes)
+twodist <- data.frame(dist1, dist0)#
+deviation <- apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)})#
+#
+t2 <- t[deviation <- 0.05,]
+dim(t2)
+deviation <- apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)})#
+#
+t2 <- t[deviation < 0.05,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})
+outcome
+table(t2$votes)
+t2[,1]
+outcome2 <- apply(t2[,unknown],2, function(x){ sum(t2$votes[x > 0])})
+outcome2
+t2 <- t[deviation < 0.01,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})#
+summary(outcome)#
+outcome2 <- apply(t2[,unknown],2, function(x){ sum(t2$votes[x > 0])})#
+summary(outcome2)
+t2 <- t#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})#
+summary(outcome)#
+outcome2 <- apply(t2[,unknown],2, function(x){ sum(t2$votes[x > 0])})#
+summary(outcome2)
+sum(dist1)
+sum(dist2)
+sum(dist0)
+t$votes <- as.numeric(dist1/sum(dist1) > dist0/sum(dist0))#
+t$votes[t$votes == 0] <- -1#
+twodist <- data.frame(dist1, dist0)#
+deviation <- apply(twodist,1, function(x){dbinom(x[1], (x[1] + x[2]), 0.5)})#
+#
+t2 <- t#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})#
+summary(outcome)#
+outcome2 <- apply(t2[,unknown],2, function(x){ sum(t2$votes[x > 0])})#
+summary(outcome2)
+t2 <- t[deviation < 0.05]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})#
+summary(outcome)#
+outcome2 <- apply(t2[,unknown],2, function(x){ sum(t2$votes[x > 0])})#
+summary(outcome2)
+t2 <- t[deviation < 0.05,]#
+#
+#
+#
+outcome <-  apply(t2[,unknown],2, function(x){ sum(x * t2$votes)})#
+summary(outcome)#
+outcome2 <- apply(t2[,unknown],2, function(x){ sum(t2$votes[x > 0])})#
+summary(outcome2)
+setwd("/Volumes/TRANS/city")
+#packages:#
+if(!(require("maps"))){#
+  install.packages("maps")#
+  require(maps)#
+}#
+if(!(require("mapdata"))){#
+  install.packages("mapdata")#
+  require(mapdata)#
+}#
+#
+#data#
+elURL <- "http://www3.stats.govt.nz/meshblock/2013/csv/2013_mb_dataset_Total_New_Zealand_CSV.zip"#
+#
+if(!(file.exists("localCache.zip"))){#
+download.file(elURL, destfile="localCache.zip", mode="wb")#
+  unzip("localCache.zip")#
+}#
+#
+#save par settings#
+oldpar <- par()#
+#
+fullcensus <-  read.csv("2013-mb-dataset-Total-New-Zealand-Individual-Part-1.csv", stringsAsFactors=FALSE)#
+christchurch <- 100 * as.numeric(fullcensus[48955,c(51:64)])/sum(as.numeric(fullcensus[48955,c(51:64)]))#
+important <- numeric(length = length(christchurch))#
+important[3] <- christchurch[3]#
+#
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+#christchurch#
+par(fig= c(.75,.95,.23,.43), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+#
+barplot(christchurch, horiz=TRUE)#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000")#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+#Age Distributions of select electorates in  2013 in New Zealand#
+#Part of https://github.com/thoughtfulbloke/statAtlasNZ#
+#MIT Licenced#
+#Author: David Hood#
+#
+#packages:#
+if(!(require("maps"))){#
+  install.packages("maps")#
+  require(maps)#
+}#
+if(!(require("mapdata"))){#
+  install.packages("mapdata")#
+  require(mapdata)#
+}#
+#
+#data#
+elURL <- "http://www3.stats.govt.nz/meshblock/2013/csv/2013_mb_dataset_Total_New_Zealand_CSV.zip"#
+#
+if(!(file.exists("localCache.zip"))){#
+download.file(elURL, destfile="localCache.zip", mode="wb")#
+  unzip("localCache.zip")#
+}#
+#
+#save par settings#
+oldpar <- par()#
+#
+fullcensus <-  read.csv("2013-mb-dataset-Total-New-Zealand-Individual-Part-1.csv", stringsAsFactors=FALSE)#
+christchurch <- 100 * as.numeric(fullcensus[48955,c(51:64)])/sum(as.numeric(fullcensus[48955,c(51:64)]))#
+important <- numeric(length = length(christchurch))#
+important[3] <- christchurch[3]#
+#
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0")#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+?par
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(1,0,0,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill")#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(1,0,0,0))#
+par(mar= c(0,0,0,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill")#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.2), new=TRUE)#
+par(oma= c(1,0,0,0))#
+par(mar= c(1,0,0,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill")#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+?par
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.2), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill")#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill")#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.5)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+box(col = 'red')#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+box(which="outer")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+box(which="figure", col="black")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+box(which="outer", col="black")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+box(which="inner", col="black")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+christchurch <- 100 * as.numeric(fullcensus[48955,c(51:63)])/sum(as.numeric(fullcensus[48955,c(51:63)]))#
+important <- numeric(length = length(christchurch))#
+important[3] <- christchurch[3]#
+#
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  axes=FALSE, axisnames=FALSE)#
+box(which="figure", col="black")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+?barplot
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+box(which="figure", col="black")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+#anticlockwise from text#
+#christchurch subfigure#
+par(fig= c(0,.2,0,.1), new=TRUE)#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,1,0))#
+barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+important <- numeric(length=13)#
+important[11] <- christchurch[11]#
+barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+box(which="figure", col="#222222")#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= c(0,.2,0,.1), new=TRUE)#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(christchurch, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main="Invercargill", cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0.2,0.4,0.1,0.2), christchurch, "Invercargill")#
+#
+#
+#
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+#Age Distributions of select electorates in  2013 in New Zealand#
+#Part of https://github.com/thoughtfulbloke/statAtlasNZ#
+#MIT Licenced#
+#Author: David Hood#
+#
+#packages:#
+if(!(require("maps"))){#
+  install.packages("maps")#
+  require(maps)#
+}#
+if(!(require("mapdata"))){#
+  install.packages("mapdata")#
+  require(mapdata)#
+}#
+#
+#data#
+elURL <- "http://www3.stats.govt.nz/meshblock/2013/csv/2013_mb_dataset_Total_New_Zealand_CSV.zip"#
+#
+if(!(file.exists("localCache.zip"))){#
+download.file(elURL, destfile="localCache.zip", mode="wb")#
+  unzip("localCache.zip")#
+}#
+#
+#save par settings#
+oldpar <- par()#
+#
+fullcensus <-  read.csv("2013-mb-dataset-Total-New-Zealand-Individual-Part-1.csv", stringsAsFactors=FALSE)#
+christchurch <- 100 * as.numeric(fullcensus[48955,c(51:63)])/sum(as.numeric(fullcensus[48955,c(51:63)]))#
+important <- numeric(length = length(christchurch))#
+important[3] <- christchurch[3]#
+#
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= mapzone, new=TRUE)#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(plotdata, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main=plottitle, cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0.2,0.4,0.1,0.2), christchurch, "Invercargill")
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= mapzone, new=TRUE)#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(plotdata, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main=plottitle, cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0.2,0.4,0,0.1), christchurch, "Invercargill")#
+#
+#
+#
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+#packages:#
+if(!(require("maps"))){#
+  install.packages("maps")#
+  require(maps)#
+}#
+if(!(require("mapdata"))){#
+  install.packages("mapdata")#
+  require(mapdata)#
+}#
+#
+#data#
+elURL <- "http://www3.stats.govt.nz/meshblock/2013/csv/2013_mb_dataset_Total_New_Zealand_CSV.zip"#
+#
+if(!(file.exists("localCache.zip"))){#
+download.file(elURL, destfile="localCache.zip", mode="wb")#
+  unzip("localCache.zip")#
+}#
+#
+#save par settings#
+oldpar <- par()#
+#
+fullcensus <-  read.csv("2013-mb-dataset-Total-New-Zealand-Individual-Part-1.csv", stringsAsFactors=FALSE)#
+christchurch <- 100 * as.numeric(fullcensus[48955,c(51:63)])/sum(as.numeric(fullcensus[48955,c(51:63)]))#
+important <- numeric(length = length(christchurch))#
+important[3] <- christchurch[3]#
+#
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= mapzone, new=TRUE)#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(plotdata, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main=plottitle, cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0,0.2,0.2,0.3), christchurch, "Invercargill")#
+#
+#
+#
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= mapzone, new=TRUE)#
+	#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(plotdata, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main=plottitle, cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0,0.2,0.2,0.3), christchurch, "Greymouth")#
+subplot(c(0,0.2,0.1,0.2), christchurch, "Invercargill")#
+#
+#
+#
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+christchurch <- 100 * as.numeric(fullcensus[48955,c(51:63)])/sum(as.numeric(fullcensus[48955,c(51:63)]))#
+important <- numeric(length = length(christchurch))#
+important[3] <- christchurch[3]#
+#
+#
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= mapzone, new=TRUE)#
+	par(bg="#e9eab0")#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(plotdata, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main=plottitle, cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0,0.2,0.2,0.3), christchurch, "Greymouth")#
+subplot(c(0,0.2,0.1,0.2), christchurch, "Invercargill")#
+#
+#
+#
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
+fullcensus[48945:48970,1]
+fullcensus[48925:48990,1]
+themecol <- "#e9eab0"#
+png(filename = "ageCities2013.png",width = 366, height = 480, units = "px", bg=themecol) #screen#
+par(oma= c(0,0,0,0))#
+par(mar= c(0,0,0,0))#
+map("nzHires", xlim = c(162, 183.4), ylim = c(-51.6, -30.2), fill=FALSE, col="#222222", mar = c(0,0,0,0), boundary= TRUE, lwd=0.4)#
+par(font=2)#
+text(x= 167, y = -40, labels = "AGE DISTRIBUTION OF")#
+text(x= 167, y = -40.5, labels = "NEW ZEALAND")#
+text(x= 167, y = -41, labels = "SELECTED AREAS", cex=1.3)#
+par(font=1)#
+text(x= 167, y = -41.5, labels = "Highlighting 10-14 year olds", cex=0.8)#
+text(x= 167, y = -42, labels = "in the year 2013", cex=0.8)#
+par(font=3)#
+text(x= 174, y = -46.5, labels = "Source: stats.govt.nz", pos=4, cex=0.8)#
+text(x= 174, y = -47, labels = "Author: David Hood", pos=4, cex=0.8)#
+#
+###############Now come the subfigures after the other main map and annotations#
+subplot <- function(mapzone, plotdata, plottitle){#
+	par(fig= mapzone, new=TRUE)#
+	par(oma= c(0,0,0,0))#
+	par(mar= c(0,0,1,0))#
+	barplot(plotdata, horiz=TRUE, axes=FALSE, axisnames=FALSE, col="#e9eab0", main=plottitle, cex.main=0.8)#
+	important <- numeric(length=13)#
+	important[11] <- christchurch[11]#
+	barplot(important, horiz=TRUE, add=TRUE, col="#550000",  border="#222222", axes=FALSE, axisnames=FALSE)#
+	box(which="figure", col="#222222")#
+}#
+#
+#anticlockwise from text#
+#
+subplot(c(0,0.2,0.2,0.3), christchurch, "Greymouth")#
+subplot(c(0,0.2,0.1,0.2), christchurch, "Queenstown")#
+subplot(c(0.2,0.4,0.0,0.1), christchurch, "Invercargill")#
+subplot(c(0.4,0.6,0.0,0.1), christchurch, "Dunedin")#
+subplot(c(0.6,0.8,0.0,0.1), christchurch, "Timaru")#
+subplot(c(0.8,1.0,0.1,0.2), christchurch, "Ashburton")#
+subplot(c(0.8,1.0,0.2,0.3), christchurch, "Christchurch")#
+subplot(c(0.8,1.0,0.3,0.4), christchurch, "Nelson")#
+#
+#
+#
+#
+#christchurch subfigure#
+#
+dev.off()#
+par(font=oldpar$font)#
+par(mar=oldpar$mar)#
+par(oma=oldpar$oma)#
+par(fig=oldpar$fig)
