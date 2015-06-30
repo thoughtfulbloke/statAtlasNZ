@@ -5,7 +5,7 @@
 
 #packages:
 if(!(require("maps"))){
-  install.packages("mapdata")
+  install.packages("maps")
   require(maps)
 }
 if(!(require("mapdata"))){
