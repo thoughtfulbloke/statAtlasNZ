@@ -27,6 +27,8 @@ Statistics New Zealand Data done as a "figure within figure graph".
 
 ![Ages in Regions 2013](ageRegion/ageRegions2013.png)
 
-### currently working on
+### Average Rainfall
 
-some kind of rainfall one with metservice data
+this involved merging the NIWA rain data with the LINZ location data
+
+![Average Rainfall](rainfall/meanRain.png)
